@@ -1,4 +1,3 @@
-Demo:
 Key Highlights
 🚀 Tech Stack: Next.js 15, Clerk, Convex, Lemon Squeezy, TypeScript
 💻 Online IDE: Supports 10 programming languages with multi-language support
@@ -12,15 +11,5 @@ Key Highlights
 ⚙️ Customization Options: Adjust font sizes for a tailored workspace
 🔗 Webhook Support: Seamless integration with webhooks
 🌟 Deployment Guide: Step-by-step instructions for professional deployment
-Environment Variables
-To set up the project, define the following environment variables in your .env file:
-
-env
-Copy code
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=  
-CLERK_SECRET_KEY=  
-CONVEX_DEPLOYMENT=  
-NEXT_PUBLIC_CONVEX_URL=  
-
-CLERK_WEBHOOK_SECRET=  
-LEMON_SQUEEZY_WEBHOOK_SECRET=  
+🌐 Live Demo
+Explore the live application: code-x-rho-sable.vercel.app
