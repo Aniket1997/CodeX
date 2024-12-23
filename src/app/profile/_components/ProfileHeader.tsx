@@ -19,7 +19,6 @@ interface ProfileHeaderProps {
   userData: {
     _id: Id<"users">;
     _creationTime: number;
-    proSince?: number | undefined;
     lemonSqueezyCustomerId?: string | undefined;
     lemonSqueezyOrderId?: string | undefined;
     name: string;

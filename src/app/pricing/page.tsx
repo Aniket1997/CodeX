@@ -125,7 +125,7 @@ async function PricingPage() {
                 {/* CTA */}
                 <div className="flex justify-center">
                   <SignedIn>
-                    <UpgradeButton />
+                  <UpgradeButton email={convexUser?.email}/>
                   </SignedIn>
 
                   <SignedOut>

@@ -59,7 +59,6 @@ export const upgradeToPro = mutation({
 
     await ctx.db.patch(user._id, {
       isPro: true,
-      proSince: Date.now(),
       lemonSqueezyCustomerId: args.lemonSqueezyCustomerId,
       lemonSqueezyOrderId: args.lemonSqueezyOrderId,
     });
