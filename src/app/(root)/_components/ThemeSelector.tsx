@@ -16,13 +16,14 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
 };
 
 function ThemeSelector() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);  // Dropdown visibility state
   const mounted = useMounted();
   const { theme, setTheme } = useCodeEditorStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentTheme = THEMES.find((t) => t.id === theme);
 
   useEffect(() => {
+    // Close the dropdown if clicked outside
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -34,6 +35,11 @@ function ThemeSelector() {
   }, []);
 
   if (!mounted) return null;
+
+  const handleThemeChange = (selectedTheme: string) => {
+    setTheme(selectedTheme);  // Set the new theme
+    setIsOpen(false);         // Close the dropdown after selection
+  };
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -54,7 +60,6 @@ function ThemeSelector() {
         </span>
 
         {/* color indicator */}
-
         <div
           className="relative w-4 h-4 rounded-full border border-gray-600 group-hover:border-gray-500 transition-colors"
           style={{ background: currentTheme?.color }}
@@ -83,9 +88,8 @@ function ThemeSelector() {
                 transition={{ delay: index * 0.1 }}
                 className={`
                 relative group w-full flex items-center gap-3 px-3 py-2.5 hover:bg-[#262637] transition-all duration-200
-                ${theme === t.id ? "bg-blue-500/10 text-blue-400" : "text-gray-300"}
-              `}
-                onClick={() => setTheme(t.id)}
+                ${theme === t.id ? "bg-blue-500/10 text-blue-400" : "text-gray-300"}`}
+                onClick={() => handleThemeChange(t.id)}
               >
                 {/* bg gradient */}
                 <div
@@ -130,4 +134,5 @@ function ThemeSelector() {
     </div>
   );
 }
+
 export default ThemeSelector;
