@@ -8,11 +8,11 @@ import { CircleOff, Cloud, Github, Laptop, Moon, Palette, Sun } from "lucide-rea
 import useMounted from "@/hooks/useMounted";
 
 const THEME_ICONS: Record<string, React.ReactNode> = {
-  "vs-dark": <Moon className="size-4" />,
-  "vs-light": <Sun className="size-4" />,
-  "github-dark": <Github className="size-4" />,
-  monokai: <Laptop className="size-4" />,
-  "solarized-dark": <Cloud className="size-4" />,
+  "vs-dark": <Moon className="size-2" />,
+  "vs-light": <Sun className="size-2" />,
+  "github-dark": <Github className="size-2" />,
+  monokai: <Laptop className="size-2" />,
+  "solarized-dark": <Cloud className="size-2" />,
 };
 
 function ThemeSelector() {
