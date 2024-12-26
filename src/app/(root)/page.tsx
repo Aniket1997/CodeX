@@ -10,10 +10,10 @@ export default async function Home() {
   const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
   const user = await currentUser();
 
-  const convexUser = await convex.query(api.users.getUser, {
-    userId: user?.id || "",
-  });
-
+  const convexUser = user
+    ? await convex.query(api.users.getUser, { userId: user.id })
+    : null;
+  
   return (
     <div className="min-h-screen">
       <div className="max-w-[1800px] mx-auto p-4">
