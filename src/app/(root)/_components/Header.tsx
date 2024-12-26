@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Blocks, Code2, Sparkles, Menu } from "lucide-react";
+import { Blocks, Code2, Menu } from "lucide-react";
 import Link from "next/link";
 import ThemeSelector from "./ThemeSelector";
 import HeaderProfileBtn from "./HeaderProfileBtn";
