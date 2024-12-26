@@ -7,7 +7,7 @@ import HeaderProfileBtn from "./HeaderProfileBtn";
 
 interface HeaderProps {
   LanguageSelector: React.ComponentType<{ hasAccess: boolean }>; // Type for the LanguageSelector component
-  convexUser: any; // Define type of convexUser (could be more specific based on your data)
+  convexUser: Object; // Define type of convexUser (could be more specific based on your data)
 }
 
 function Header({ LanguageSelector, convexUser }: HeaderProps) {
