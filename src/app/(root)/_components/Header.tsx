@@ -1,6 +1,7 @@
+/* Updated Header Component */
 "use client";
 import { useState } from "react";
-import { Blocks, Code2, Menu } from "lucide-react";
+import { Blocks, Code2, Menu, Star } from "lucide-react"; // Import Star icon for Pro button
 import Link from "next/link";
 import ThemeSelector from "./ThemeSelector";
 import HeaderProfileBtn from "./HeaderProfileBtn";
@@ -52,6 +53,18 @@ function Header({ LanguageSelector, convexUser }: HeaderProps) {
                 <Code2 className="w-4 h-4 relative z-10 group-hover:rotate-3 transition-transform" />
                 <span className="text-sm font-medium relative z-10 group-hover:text-white transition-colors">
                   Snippets
+                </span>
+              </Link>
+
+              {/* Pro Button */}
+              <Link
+                href="/pricing"
+                className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-yellow-300 bg-gray-800/50 hover:bg-yellow-500/10 border border-gray-800 hover:border-yellow-500/50 transition-all duration-300 shadow-lg overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Star className="w-4 h-4 relative z-10 group-hover:rotate-3 transition-transform" />
+                <span className="text-sm font-medium relative z-10 group-hover:text-white transition-colors">
+                  Pro
                 </span>
               </Link>
             </nav>
@@ -114,6 +127,19 @@ function Header({ LanguageSelector, convexUser }: HeaderProps) {
                   Snippets
                 </span>
               </Link>
+
+              {/* Pro Button in Drawer */}
+              <Link
+                href="/pricing"
+                className="relative group flex items-center gap-2 px-4 py-2 rounded-lg text-yellow-300 bg-gray-800/50 hover:bg-yellow-500/10 border border-gray-800 hover:border-yellow-500/50 transition-all duration-300 shadow-md"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Star className="w-5 h-5 relative z-10 group-hover:rotate-3 transition-transform" />
+                <span className="text-sm font-medium relative z-10 group-hover:text-white transition-colors">
+                  Pro
+                </span>
+              </Link>
+
               <LanguageSelector hasAccess={!!convexUser?.isPro} />
               <ThemeSelector />
             </div>
